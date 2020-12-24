@@ -50,25 +50,3 @@ export type GetTodosQuery = {
     done: boolean,
   } | null > | null,
 };
-
-export type OnAddTodoSubscription = {
-  onAddTodo:  {
-    __typename: "Todo",
-    id: string,
-    title: string,
-    done: boolean,
-  } | null,
-};
-
-export type OnDeleteTodoSubscription = {
-  onDeleteTodo: string | null,
-};
-
-export type OnUpdateTodoSubscription = {
-  onUpdateTodo:  {
-    __typename: "Todo",
-    id: string,
-    title: string,
-    done: boolean,
-  } | null,
-};

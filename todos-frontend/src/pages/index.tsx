@@ -5,7 +5,7 @@ import { deleteTodo } from '../graphql/mutations'
 import { API } from "aws-amplify"
 import shortid from "shortid"
 import { Delete} from '@material-ui/icons'
-
+import "./style.css";
 import { CircularProgress } from "@material-ui/core"
 interface title {
   todoTittleRef: any
