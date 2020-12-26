@@ -31,7 +31,7 @@ const DELETE_TODO = gql`
 const Index = () => {
   const [title, setTitle] = useState("")
   const { data, loading } = useQuery(GET_TODOS)
-  const [createNote] = useMutation(CREATE_TODO)
+  const [createTodo] = useMutation(CREATE_TODO)
   const [deleteTodo] = useMutation(DELETE_TODO)
 
   const handleSubmit = async () => {
@@ -42,7 +42,7 @@ const Index = () => {
     }
     console.log("Creating Todo:", todo)
     setTitle("")
-    await createNote({
+    await createTodo({
       variables: {
         todo,
       },
@@ -50,7 +50,7 @@ const Index = () => {
     })
   }
   const handleDelete = async (todoId) => {
-    const data = await deleteTodo({
+     await deleteTodo({
       variables: { todoId: todoId },
       refetchQueries: [{ query: GET_TODOS }]
     })
